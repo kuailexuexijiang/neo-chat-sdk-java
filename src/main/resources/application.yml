@@ -1,12 +1,3 @@
 spring:
   application:
     name: neo-chat-sdk-java
-
-
-chat:
-  sdk:
-    config:
-      gpt:
-        enable: true
-        api-host: https://api.aicnn.cn
-        api-secret-key: sk-usywctCXPkAOxhirR5hXxYmNwjBKrycHiAD5P4Iq80ZpZQB8
