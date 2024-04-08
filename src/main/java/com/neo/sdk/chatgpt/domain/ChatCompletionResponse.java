@@ -29,14 +29,5 @@ public class ChatCompletionResponse implements Serializable {
      * 创建
      */
     private long created;
-    /**
-     * 耗材
-     */
-    private Usage usage;
-    /**
-     * 该指纹代表模型运行时使用的后端配置。
-     * https://platform.openai.com/docs/api-reference/chat
-     */
-    @JsonProperty("system_fingerprint")
-    private String systemFingerprint;
+
 }
