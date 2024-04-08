@@ -45,17 +45,12 @@ public class DefaultOpenAiSession implements OpenAiSession {
     }
 
     @Override
-    public EventSource chatCompletions(ChatCompletionRequest chatCompletionRequest, EventSourceListener eventSourceListener) throws JsonProcessingException {
-        return chatCompletions(Constants.NULL, Constants.NULL, chatCompletionRequest, eventSourceListener);
-    }
-
-    @Override
     public CompletableFuture<String> chatCompletions(ChatCompletionRequest chatCompletionRequest) throws InterruptedException, JsonProcessingException {
         // 用于执行异步任务并获取结果
         CompletableFuture<String> future = new CompletableFuture<>();
         StringBuffer dataBuffer = new StringBuffer();
 
-        chatCompletions(chatCompletionRequest, new EventSourceListener(){
+        chatCompletions(chatCompletionRequest, new EventSourceListener() {
             @Override
             public void onEvent(EventSource eventSource, String id, String type, String data) {
                 if ("[DONE]".equalsIgnoreCase(data)) {
@@ -98,6 +93,11 @@ public class DefaultOpenAiSession implements OpenAiSession {
         });
 
         return future;
+    }
+
+    @Override
+    public EventSource chatCompletions(ChatCompletionRequest chatCompletionRequest, EventSourceListener eventSourceListener) throws JsonProcessingException {
+        return chatCompletions(Constants.NULL, Constants.NULL, chatCompletionRequest, eventSourceListener);
     }
 
     @Override
