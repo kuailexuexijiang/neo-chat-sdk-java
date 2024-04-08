@@ -30,7 +30,7 @@ public class ApiTest {
         // 1.1 官网原始 apiHost https://api.openai.com/ - 官网的Key可直接使用
         // 1.2 三方公司 apiHost https://pro-share-aws-api.zcyai.com/ - 需要找我获得 Key
         Configuration configuration = new Configuration();
-        configuration.setApiHost("http://gpt35.gleeze.com:8080/");
+        configuration.setApiHost("https://gpt35.allai.works/");
         configuration.setApiKey("sk-usywctCXPkAOxhirR5hXxYmNwjBKrycHiAD5P4Iq80ZpZQB8");
 
         // 2. 会话工厂
