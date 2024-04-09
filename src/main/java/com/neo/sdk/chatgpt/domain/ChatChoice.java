@@ -16,6 +16,7 @@ public class ChatChoice implements Serializable {
     /** stream = false 请求参数里返回的属性是 delta */
     @JsonProperty("message")
     private Message message;
+
     @JsonProperty("finish_reason")
     private String finishReason;
 
